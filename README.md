@@ -63,7 +63,8 @@ Since building the library from Visual Studio is supported, and since that will 
 
 The "README.MSWindows.txt" file says
 
-> ~~~txt Configuring FLTK
+> ~~~txt
+> Configuring FLTK
 > ------------------
 >
 > Launch VisualStudio. Open the project file in
@@ -73,23 +74,23 @@ The "README.MSWindows.txt" file says
 
 A simpler way is to just double-click that file, which should launch Visual Studio. However, if one has several versions installed one may want to do the suggested two steps. Since I have deleted all earlier versions of Visual Studio I just double-click the file; in my filesystem “c:\my\dev\libraries-external\fltk\fltk-1.3.5\ide\visualc2010\fltk.sln”:
 
-<img src="images/screenshots/fltk/sshot-0.png"></img>
+<img src="images/screenshots/fltk/sshot-0.png"/>
 
 Visual Studio launches, in its own unmistakable worm-struggling-in-syrup way, and pops up a project version conversion dialog:
 
-<img src="images/screenshots/fltk/sshot-1.png"></img>
+<img src="images/screenshots/fltk/sshot-1.png"/>
 
 I don’t plan on installing any older Visual Studio version, and the FLTK sources are always available to start from scratch again if necessary, so I just click OK. There is a progress box with a frantic progress meter. It’s quickly over: successful conversion.
 
 The "README.MSWindows.txt" file now says one should build the “demo” project, and that’s already set as startup project (marked in bold in Visual Studio’s project list). So I just hit **`Ctrl`+`F5`** to build and run it. I hurry to press the `Print Screen` key to take a screenshot of the initial build progress message text in the output pane:
 
-<img src="images/screenshots/fltk/sshot-2.annotated.png"></img>
+<img src="images/screenshots/fltk/sshot-2.annotated.png"/>
 
 There’s evidently a lot of building for Visual Studio to do, so I go make a cup of coffee.
 
 When I return a number of console windows are flashing into existence and disappearing just as quickly, and then suddently one remains, accompanied by a more GUI-like window from the same program:
 
-<img src="images/screenshots/fltk/sshot-3.png"></img>
+<img src="images/screenshots/fltk/sshot-3.png"/>
 
 The "README.MSWindows.txt" file says about this,
 
@@ -97,15 +98,15 @@ The "README.MSWindows.txt" file says about this,
 
 So I explore a few things. It works. But the look and feel of this is old-fahsioned gray and square-ish pre-Vista,
 
-<img src="images/screenshots/fltk/sshot-4.png"></img>
+<img src="images/screenshots/fltk/sshot-4.png"/>
 
 However, in one’s own programs a modern look and feel can probably be easily specified, though with Windows-specific code and tool usage. Weasel-word “probably” because if FLTK is doing its own drawing of buttons etc., then the only look and feel adjustments available will be those that the library itself supplies. Another problem I notice, that curves and diagonal lines are not anti-aliased, i.e. they’re not smooth but with noticeable square pixels:
 
-<img src="images/screenshots/fltk/sshot-5.png"></img>
+<img src="images/screenshots/fltk/sshot-5.png"/>
 
 However, I see that there’s a Cairo sub-folder and a Cairo demo-program, and Cairo is a 2D graphics library that I know can do anti-aliasing (it’s also the basis of the only serious proposal for a standard C++ graphics library). So I set that project as active in Visual Studio, and try to run it. However, that just pops up an error box:
 
-<img src="images/screenshots/fltk/sshot-6.png"></img>
+<img src="images/screenshots/fltk/sshot-6.png"/>
 
 Searching for “cairo” in the "README.MSWindows.txt" file doesn’t turn up any hits.
 
@@ -125,7 +126,7 @@ So, I google “fltk cairo”. The first hit leads to [“Cairo Support Function
 
 Oh! Build modes for Visual Studio! Convenient!
 
-<img src="images/screenshots/fltk/sshot-7.clipped.png"></img>
+<img src="images/screenshots/fltk/sshot-7.clipped.png"/>
 
 After selecting the with-Cairo release mode I press `Ctrl`+`F5` to rebuild and run, and I plan to go to make a new cup of coffee (writing this all up takes much time, and also building takes time). However, as I type in the final period of that sentence I notice that the build activity has stopped. There’s been a build error!
 
@@ -164,7 +165,7 @@ After selecting the with-Cairo release mode I press `Ctrl`+`F5` to rebuild and r
 
 Uh oh. Well I’ll have that coffee anyway, first. :)
 
-<img src="images/coffee-cup/image.jpg" width="30%" align="right"></img>
+<img src="images/coffee-cup/image.jpg" width="30%" align="right"/>
 In the kitchen I realize that fixing the Cairo support isn’t a priority for novices trying to use the FLTK library with Bjarne’s C++ book. Discussing the Cairo support would just be a fruitless long digression. So I just mention that it will involve either changing the project’s include path specification, or adding a suitable junction or symlink to the Cairo include header folder, somewhere where it will be found by the compiler. Possibly it will also involve making a Cairo DLL available to the programs. So it can conceivably be much to discuss, so I decide to not do that.
 
 Now, where did the first build put the binaries?
@@ -175,11 +176,11 @@ Checking the properties of the first demo program project, “adjuster”, there
 ..\..\lib;%(AdditionalLibraryDirectories)
 ~~~~
 
-<img src="images/screenshots/fltk/sshot-8.png"></img>
+<img src="images/screenshots/fltk/sshot-8.png"/>
 
 I.e. up two levels from the project folder there should be a “lib” folder, and there is, and it contains a “README” file:
 
-<img src="images/screenshots/fltk/sshot-9.annotated.png"></img>
+<img src="images/screenshots/fltk/sshot-9.annotated.png"/>
 
 ~~~txt
 README.lib
@@ -211,11 +212,11 @@ Different versions and variants of Visual C++, such as the 32-bit versus the 64-
 
 The two main schemes are to encode the specifics of a binary in its filename, or to place the binaries in a folder hierarchy that reflects this information. I use a combined approach with debug versus release encoded in the filenames. So, first I move the generated binaries to a folder for Visual C++ 2019 32-bit binaries, “C:\my\dev\library-binaries\msvc-2019\32-bit”:
 
-<img src="images/screenshots/fltk/sshot-10.annotated.png"></img>
+<img src="images/screenshots/fltk/sshot-10.annotated.png"/>
 
 Then I attempt to build also 64-bit binaries of all the “fltk…” projects, after creating a 64-bit toolset configuration in the Visual Studio solution:
 
-<img src="images/screenshots/fltk/sshot-11.clipped.processed.png"></img>
+<img src="images/screenshots/fltk/sshot-11.clipped.processed.png"/>
 
 But Visual Studio now generates multiple errors about not being able to access the debug information file, a.k.a. program database, that it itself generates. Something ungood (I suspect a bug in the VS implementation of parallel builds), so I decide to not waste time and space on this either. I.e. no Cairo support, and no 64-bit binaries.
 
@@ -235,7 +236,7 @@ In Visual Studio I check the source code of the first example program, to see ho
 
 Usually a library’s headers are in an “***include***” folder, so I expect to find the “FL” folder as a sub-folder of an “include”. But it’s just directly there in the library’s main folder. Unconventional, but OK:
 
-<img src="images/screenshots/fltk/sshot-12.png"></img>
+<img src="images/screenshots/fltk/sshot-12.png"/>
 
 One way to use this in a VS project is to include the parent folder path, the library folder path, in the VS project’s include search path. With this I believe most common approach one adds at least one such path per library, and that’s extra work that I can very well do without, thank you. Instead I use just *one* include folder, where I put junctions (they’re like symbolic links, but you can create them without configuring Windows for development) to the relevant folders:
 
@@ -412,11 +413,11 @@ Oh, I forgot to explain the `/MD` option: it specifies that the program should u
 
 Anyway, this has produced an executable “hello.exe” that I now run via command `hello`, which produces the following weird looking message box:
 
-<img src="images/screenshots/fltk/sshot-13.png"></img>
+<img src="images/screenshots/fltk/sshot-13.png"/>
 
 The button looks suspiciously like a custom-drawn old pre-Vista style Windows API button, which if so means that one may modernize the look. To check that I fire up the Spy++ inspector tool from Visual Studio’s tools menu. Unfortunately, Spy++ reports that there are no Windows controls within the window, it’s all drawn directly by FLTK:
 
-<img src="images/screenshots/fltk/sshot-14.png"></img>
+<img src="images/screenshots/fltk/sshot-14.png"/>
 
 So, the only quick improvement is in the source code, fixing the incorrect assumption about the button label.
 
@@ -434,7 +435,7 @@ auto main()
 }
 ~~~
 
-<img src="images/screenshots/fltk/sshot-15.png"></img>
+<img src="images/screenshots/fltk/sshot-15.png"/>
 
 The executable in this build is a Windows console program, which means that
 
@@ -458,17 +459,17 @@ To keep things simple here I decide to instead use the middle approach, with the
 
 In Visual Studio I start by creating a GUI subsystem ordinary ordinary Windows desktop program, which in VS 2019 can be done e.g. via the “Windows Desktop Application” project template:
 
-<img src="images/screenshots/vs-project/sshot-1.png"></img>
+<img src="images/screenshots/vs-project/sshot-1.png"/>
 
 I create a new folder “build” to have the build(s) in, and choose a systematic project name, “hellobox-with-vs-2019”, so that it can easily be related both to the corresponding source code folder and the relevant build tools:
 
-<img src="images/screenshots/vs-project/sshot-2.png"></img>
+<img src="images/screenshots/vs-project/sshot-2.png"/>
 
 Visual Studio now presents a progress bar for an action that should be instantenous.
 
 After the progress bar has inanely progressed for half a minute or so, VS presents the created projected, complete with repulsive Microsoft style starter code for a Windows API level GUI program:
 
-<img src="images/screenshots/vs-project/sshot-3.png"></img>
+<img src="images/screenshots/vs-project/sshot-3.png"/>
 
 At this point I remember there there is another desktop program project template, that doesn’t produce all this undesired cruft. Oh well. Done is done.
 
@@ -487,31 +488,31 @@ small.ico
 targetver.h
 ~~~
 
-<img src="images/screenshots/vs-project/sshot-4.png"></img>
+<img src="images/screenshots/vs-project/sshot-4.png"/>
 
 Visual Studio will by default just remove the files from the project. I choose the “Delete” button to also delete the files. Usually that works fine, although sometimes Visual Studio gets confused and thinks that removed and deleted files are still part of the project (one effective remedy then is to edit the project configuration file as text, but I don’t need to do that now):
 
-<img src="images/screenshots/vs-project/sshot-5.png"></img>
+<img src="images/screenshots/vs-project/sshot-5.png"/>
 
 With the cruft gone I right click the project’s “Source Files” category (file categories misleadingly have folder icons) and select “Add” ▷ “Existing item…” in order to add the the previous section’s source code, the “main.v2.cpp” file.
 
-<img src="images/screenshots/vs-project/sshot-6.png"></img>
+<img src="images/screenshots/vs-project/sshot-6.png"/>
 
 Visual Studio’s IntelliSense immediately highlights three parts of the code with red curvy underlining:
 
-<img src="images/screenshots/vs-project/sshot-7.png"></img>
+<img src="images/screenshots/vs-project/sshot-7.png"/>
 
  The error indicators come because I haven’t bothered to create a default include search path for new Visual Studio C++ projects. The include search path is specified in the project settings, which are edited as project *properties*. One way to those property sheets, the way I choose now, is to right-click the project and choose “Properties” at bottom in that long menu:
 
-<img src="images/screenshots/vs-project/sshot-8.png"></img>
+<img src="images/screenshots/vs-project/sshot-8.png"/>
 
 First I use the drop-down in the upper left of this dialog to tell it that I want to make changes to *all* configurations, not just “Release”:
 
-<img src="images/screenshots/vs-project/sshot-9.png"></img>
+<img src="images/screenshots/vs-project/sshot-9.png"/>
 
 Next, just because I usually use language features that were introduced in C++14 and C++17, I choose C++17 as C++ language standard:
 
-<img src="images/screenshots/vs-project/sshot-10.png"></img>
+<img src="images/screenshots/vs-project/sshot-10.png"/>
 
 In passing, the white window title, deactivation of the window while the apparent drop-down menu is there, is real, a silly-bug in Visual Studio.
 
@@ -519,7 +520,7 @@ Evidently someone decided to reinvent the wheel (a drop-down menu), and their ne
 
 In order to support code that checks the C++ standard version via `__cplusplus`, with Visual C++ it’s necessary to use option `/Zc:__cplusplus`. This option can’t be selected via the GUI in Visual Studio 2019. And so I go the “Additional Options” field for the result command line, where I can type this in this option plus any others I want, like `/utf-8`:
 
-<img src="images/screenshots/vs-project/sshot-11.png"></img>
+<img src="images/screenshots/vs-project/sshot-11.png"/>
 
 The **``/utf-8`** option is **critical** for the code used in this project, because it ensures that string literals are encoded with UTF-8. I.e., it sets UTF-8 as the C++ “execution character set”. It *also* instructs the compiler to assume by default that source code is UTF-8 encoded.
 
@@ -527,20 +528,20 @@ Also critical, to set the include search path, the library search path, and use 
 
 To edit I the include search path I click on the down arrow to the right in the field, which (it’s silly) drops down a menu with just one item, “Edit…”:
 
-<img src="images/screenshots/vs-project/sshot-12.png"></img>
+<img src="images/screenshots/vs-project/sshot-12.png"/>
 
 Since I use a single common include directory I only have to type in “c:\my\dev\include” here:
 
-<img src="images/screenshots/vs-project/sshot-13.png"></img>
+<img src="images/screenshots/vs-project/sshot-13.png"/>
 
 And likewise for the libraries search path, I only have to type in “c:\my\dev\library-binaries\msvc-2019\32-bit” here, and after clicking OK it looks like this:
 
-<img src="images/screenshots/vs-project/sshot-14.png"></img>
+<img src="images/screenshots/vs-project/sshot-14.png"/>
 
 The FLTK library needs to be specified separately for the release and debug configurations, as respectively “fltk.lib”  and “fltkd.lib”, because with Visual C++ the main program’s runtime library specification has to match the runtime library specification used when building the library binaries, release or debug:
 
-<img src="images/screenshots/vs-project/sshot-15.png"></img>
-<img src="images/screenshots/vs-project/sshot-16.png"></img>
+<img src="images/screenshots/vs-project/sshot-15.png"/>
+<img src="images/screenshots/vs-project/sshot-16.png"/>
 
 And that’s it regarding the critical stuff, the settings necessary to get this to compile and run. In addition I use to up the warning level and enable language features such as RTTI, plus, when that’s relevant, turn off use of precompiled headers. Happily this project template didn’t set up use of precompiled headers.
 
@@ -548,15 +549,15 @@ Now, having OK-ed away the dialog, I try to build by pressing `Ctrl`+`Shift`+`B`
 
 Unexpectedly the build succeeds all the way:
 
-<img src="images/screenshots/vs-project/sshot-17.png"></img>
+<img src="images/screenshots/vs-project/sshot-17.png"/>
 
 I try to run it via `Ctrl`+`F5` and that works too, but unexpectedly a console window pops up:
 
-<img src="images/screenshots/vs-project/sshot-18.png"></img>
+<img src="images/screenshots/vs-project/sshot-18.png"/>
 
 I now recall reading something about FLTK *producing a console window* in debug builds. To test this I rebuild in release mode, and run it. Now, happily, there’s no console window, but instead there’s an unexpected avalanche of warnings about missing debug information:
 
-<img src="images/screenshots/vs-project/sshot-19.png"></img>
+<img src="images/screenshots/vs-project/sshot-19.png"/>
 
 I choose “Build” “Clean solution”, and rebuild, but get the same avalanche of warnings. There’s one warning for each object file in the library.
 
@@ -570,15 +571,15 @@ So, a possible **workaround kludge**, a.k.a. a **stopgap measure**, is to just t
 
 That is, I try to do that, but because I was able to apparently reproduce the warning avalanche in the command line by adding just compiler option `/Zi` (generate a debug information file, please), at first I mistakenly turn that off in the project settings. It has no effect. I then realize that all these warnings, even though there are two bunches of them, are *linker warnings*, so it has to be some linker option, and it is; I now turn off the option that makes the linker generate debugging information:
 
-<img src="images/screenshots/vs-project/sshot-20.png"></img>
+<img src="images/screenshots/vs-project/sshot-20.png"/>
 
 To test that I choose “Build” ▷ “Rebuild Solution”, and hurray, it works, no warnings!
 
-<img src="images/screenshots/vs-project/sshot-21.png"></img>
+<img src="images/screenshots/vs-project/sshot-21.png"/>
 
 A *solution*, instead of this workaround, would entail changing the release configuration project settings of the FLTK library projects so that uniquely named debug information files are generated also for the release build binaries, and rebuilding FLTK. I decide to not do that for this guide/tutorial/write-up. Enough is enough, already!
 
-<img src="images/screenshots/vs-project/sshot-22.png"></img>
+<img src="images/screenshots/vs-project/sshot-22.png"/>
 
 
 ## 7. Display minimal text and graphics in a general window.
@@ -594,13 +595,13 @@ For GUI programming there are two levels of “Hello, world!”:
 
 I have usually used a dynamic ellipse program for the second “Hello, world!” level. This program presents a resizable window with an ellipse that fills out the window’s **client area**, the area where it a traditional window presents things, as opposed to the title bar, menu bar and window frame areas. In Windows 10 it can look like this:
 
-<img src="images/screenshots/simple-main-window/sshot-1.png"></img>
+<img src="images/screenshots/simple-main-window/sshot-1.png"/>
 
 In the above API-level program I added some short code to use a more reasonable-looking readable font for the text, which was pretty ungood-looking by default, but I did nothing about anti-aliasing the ellipse. So the ellipse has the same kind of jagged look as produced by FLTK without Cairo. Corresponding to how one may use Cairo with FLTK, for the Windows API one may use e.g. its GDI+ graphics, but with both FLTK and the API level that fix entails much complication.
 
 With FLTK the look of the text in the window is OK, but the font used for its menus could very well have been better. I decide to not do anything about it. So it looks like this:
 
-<img src="images/screenshots/simple-main-window/sshot-2.png"></img>
+<img src="images/screenshots/simple-main-window/sshot-2.png"/>
 
 For the Windows API level program coding I encounter two main issues: that `WM_SETFONT` doesn’t seem to work with a basic dialog window, and that `DrawTextA` doesn’t work correctly with UTF-8 as the process codepage, so that I have to use the UTF-16 based `DrawTextW`, with conversion of the program’s text from UTF-8 to UTF-16 encoding.
 
