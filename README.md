@@ -1,6 +1,6 @@
 # Install FLTK for use with Visual C++
 
-Bjarne Stroustrup’s C++ book for beginners, “Programming: Principles and Practice Using C++”, uses the [FLTK library](https://www.fltk.org/) for simple graphical user interfaces (GUI). I decidedly do  recommend that someone reading the book in order to learn from it, should [***buy the book***](https://www.amazon.com/Programming-Principles-Practice-Using-2nd/dp/0321992784), possibly after trying out a few chapters. Potential authors will not use much of their time writing technical books if many/most readers decide to not pay…
+Bjarne Stroustrup’s C++ book for beginners, [“Programming: Principles and Practice Using C++”](https://www.amazon.com/Programming-Principles-Practice-Using-2nd/dp/0321992784), uses the [FLTK library](https://www.fltk.org/) for simple graphical user interfaces (GUI).
 
 I show how to install and use the library with Visual C++ 2019, both for the Windows command line and with use in Visual Studio.
 
