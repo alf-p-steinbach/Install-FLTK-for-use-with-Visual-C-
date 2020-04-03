@@ -605,7 +605,7 @@ With FLTK the look of the text in the window is OK, but the font used for its me
 
 For the Windows API level program coding I encounter two main issues: that `WM_SETFONT` doesn’t seem to work with a basic dialog window, and that `DrawTextA` doesn’t work correctly with UTF-8 as the process codepage, so that I have to use the UTF-16 based `DrawTextW`, with conversion of the program’s text from UTF-8 to UTF-16 encoding.
 
-For the FLTK program coding I similarly encounter some issues, in particular that `fl_translate` appears to have no effect. I surmise that it may that it has no effect on graphics operations with integer coordinates. But I decide to not check that.
+For the FLTK program coding I similarly encounter some issues, in particular that `fl_translate` appears to have no effect. I surmise that it may be that it has no effect on graphics operations with integer coordinates. But I decide to not check that.
 
 Another issue with FLTK:
 
