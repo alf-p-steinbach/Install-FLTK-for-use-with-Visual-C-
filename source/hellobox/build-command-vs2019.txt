@@ -1,0 +1,1 @@
+cl /diagnostics:column main.v2.cpp /MD fltk.lib /Fe"hello" user32.lib gdi32.lib ole32.lib advapi32.lib shell32.lib /link /subsystem:windows

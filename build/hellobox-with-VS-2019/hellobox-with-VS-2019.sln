@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hellobox-with-VS-2019", "hellobox-with-VS-2019.vcxproj", "{AE10D2AE-5406-4416-A2FA-FB03AD7E4FD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE10D2AE-5406-4416-A2FA-FB03AD7E4FD7}.Debug|x64.ActiveCfg = Debug|x64
+		{AE10D2AE-5406-4416-A2FA-FB03AD7E4FD7}.Debug|x64.Build.0 = Debug|x64
+		{AE10D2AE-5406-4416-A2FA-FB03AD7E4FD7}.Debug|x86.ActiveCfg = Debug|Win32
+		{AE10D2AE-5406-4416-A2FA-FB03AD7E4FD7}.Debug|x86.Build.0 = Debug|Win32
+		{AE10D2AE-5406-4416-A2FA-FB03AD7E4FD7}.Release|x64.ActiveCfg = Release|x64
+		{AE10D2AE-5406-4416-A2FA-FB03AD7E4FD7}.Release|x64.Build.0 = Release|x64
+		{AE10D2AE-5406-4416-A2FA-FB03AD7E4FD7}.Release|x86.ActiveCfg = Release|Win32
+		{AE10D2AE-5406-4416-A2FA-FB03AD7E4FD7}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7C9E2E1-7F96-40BB-859C-092585A2A826}
+	EndGlobalSection
+EndGlobal

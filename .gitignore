@@ -1,0 +1,6 @@
+
+build/hellobox-with-VS-2019/.vs
+build/hellobox-with-VS-2019/Debug
+build/hellobox-with-VS-2019/Release
+*.aps
+*.pdb
