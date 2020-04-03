@@ -518,7 +518,7 @@ In passing, the white window title, deactivation of the window while the apparen
 
 Evidently someone decided to reinvent the wheel (a drop-down menu), and their new wheel was octagonal and a little bumpy, but sufficiently round to roll, if not exactly the rock ’n roll experience of a proper wheel.
 
-In order to support code that checks the C++ standard version via `__cplusplus`, with Visual C++ it’s necessary to use option `/Zc:__cplusplus`. This option can’t be selected via the GUI in Visual Studio 2019. And so I go the “Additional Options” field for the result command line, where I can type this in this option plus any others I want, like `/utf-8`:
+In order to support code that checks the C++ standard version via `__cplusplus`, with Visual C++ it’s necessary to use option `/Zc:__cplusplus`. This option can’t be selected via the GUI in Visual Studio 2019. And so I go the “Additional Options” field for the result command line, where I can type in this option plus any others I want, like `/utf-8`:
 
 <img src="images/screenshots/vs-project/sshot-11.png"/>
 
