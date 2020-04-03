@@ -593,7 +593,7 @@ For GUI programming there are two levels of “Hello, world!”:
   - how to do general windowing, graphics and text, and  
   - communication user → program.
 
-I have usually used a dynamic ellipse program for the second “Hello, world!” level. This program presents a resizable window with an ellipse that fills out the window’s **client area**, the area where it a traditional window presents things, as opposed to the title bar, menu bar and window frame areas. In Windows 10 it can look like this:
+I have usually used a dynamic ellipse program for the second “Hello, world!” level. This program presents a resizable window with an ellipse that fills out the window’s **client area**, the area where a traditional window presents things, as opposed to the title bar, menu bar and window frame areas. In Windows 10 it can look like this:
 
 <img src="images/screenshots/simple-main-window/sshot-1.png"/>
 
