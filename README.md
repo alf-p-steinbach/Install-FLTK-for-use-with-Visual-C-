@@ -465,7 +465,7 @@ I create a new folder “build” to have the build(s) in, and choose a systemat
 
 <img src="images/screenshots/vs-project/sshot-2.png"/>
 
-Visual Studio now presents a progress bar for an action that should be instantenous.
+Visual Studio now presents a progress bar for an action that should be instantaneous.
 
 After the progress bar has inanely progressed for half a minute or so, VS presents the created projected, complete with repulsive Microsoft style starter code for a Windows API level GUI program:
 
