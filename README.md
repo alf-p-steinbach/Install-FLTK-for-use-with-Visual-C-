@@ -522,7 +522,7 @@ In order to support code that checks the C++ standard version via `__cplusplus`,
 
 <img src="images/screenshots/vs-project/sshot-11.png"/>
 
-The **``/utf-8`** option is **critical** for the code used in this project, because it ensures that string literals are encoded with UTF-8. I.e., it sets UTF-8 as the C++ “execution character set”. It *also* instructs the compiler to assume by default that source code is UTF-8 encoded.
+The **`/utf-8`** option is **critical** for the code used in this project, because it ensures that string literals are encoded with UTF-8. I.e., it sets UTF-8 as the C++ “execution character set”. It *also* instructs the compiler to assume by default that source code is UTF-8 encoded.
 
 Also critical, to set the include search path, the library search path, and use of the FLTK library.
 
