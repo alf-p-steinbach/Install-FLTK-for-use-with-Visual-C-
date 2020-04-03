@@ -526,7 +526,7 @@ The **``/utf-8`** option is **critical** for the code used in this project, beca
 
 Also critical, to set the include search path, the library search path, and use of the FLTK library.
 
-To edit I the include search path I click on the down arrow to the right in the field, which (it’s silly) drops down a menu with just one item, “Edit…”:
+To edit the include search path I click on the down arrow to the right in the field, which (it’s silly) drops down a menu with just one item, “Edit…”:
 
 <img src="images/screenshots/vs-project/sshot-12.png"/>
 
